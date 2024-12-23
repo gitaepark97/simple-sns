@@ -1,4 +1,4 @@
-package hugo.simplesns.core.repository;
+package hugo.simplesns.core.domain.repository;
 
 import hugo.simplesns.core.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;

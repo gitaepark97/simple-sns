@@ -1,8 +1,8 @@
 package hugo.simplesns.core.service;
 
 import hugo.simplesns.core.domain.User;
+import hugo.simplesns.core.domain.repository.UserRepository;
 import hugo.simplesns.core.exception.ErrorCode;
-import hugo.simplesns.core.repository.UserRepository;
 import hugo.simplesns.core.support.provider.ClockProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package hugo.simplesns.core.service;
 
 import hugo.simplesns.core.domain.Post;
-import hugo.simplesns.core.repository.PostRepository;
+import hugo.simplesns.core.domain.repository.PostRepository;
 import hugo.simplesns.core.support.provider.ClockProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

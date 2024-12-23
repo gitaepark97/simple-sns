@@ -1,4 +1,4 @@
-package hugo.simplesns.core.repository;
+package hugo.simplesns.core.domain.repository;
 
 import hugo.simplesns.core.domain.Post;
 import org.springframework.data.domain.Page;
