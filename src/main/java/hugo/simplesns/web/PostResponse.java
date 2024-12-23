@@ -1,5 +1,8 @@
 package hugo.simplesns.web;
 
+import hugo.simplesns.core.domain.Post;
+import hugo.simplesns.core.domain.User;
+
 record PostResponse(
     Long id,
     UserResponse writer,
@@ -8,13 +11,13 @@ record PostResponse(
     Long createTime
 ) {
 
-    static PostResponse from(PostWithWriter postWithWriter) {
+    static PostResponse from(Post post, User user) {
         return new PostResponse(
-            postWithWriter.post().getId(),
-            UserResponse.from(postWithWriter.writer()),
-            postWithWriter.post().getTitle(),
-            postWithWriter.post().getContent(),
-            postWithWriter.post().getCreateTime()
+            post.getId(),
+            UserResponse.from(user),
+            post.getTitle(),
+            post.getContent(),
+            post.getCreateTime()
         );
     }
 

@@ -31,8 +31,7 @@ class UserController {
     Page<PostResponse> getUserPosts(@PathVariable String username, Pageable pageable) {
         User user = userService.getUserByUsername(username);
         return postService.getUserPosts(user.getId(), pageable)
-            .map(post -> PostWithWriter.of(post, user))
-            .map(PostResponse::from);
+            .map(post -> PostResponse.from(post, user));
     }
 
 }
