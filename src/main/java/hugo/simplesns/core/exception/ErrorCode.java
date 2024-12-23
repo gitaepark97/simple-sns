@@ -1,4 +1,4 @@
-package hugo.simplesns.support.exception;
+package hugo.simplesns.core.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

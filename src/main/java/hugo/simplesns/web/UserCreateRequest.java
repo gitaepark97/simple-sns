@@ -1,9 +1,9 @@
-package hugo.simplesns.controller;
+package hugo.simplesns.web;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
-record CreateUserRequest(
+record UserCreateRequest(
     @NotBlank
     @Pattern(
         regexp = "^[a-zA-Z0-9]{4,30}$",

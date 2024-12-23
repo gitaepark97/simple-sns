@@ -1,4 +1,4 @@
-package hugo.simplesns.support.provider;
+package hugo.simplesns.core.support.provider;
 
 public interface ClockProvider {
 

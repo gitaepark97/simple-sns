@@ -1,4 +1,4 @@
-package hugo.simplesns.domain;
+package hugo.simplesns.core.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,19 +26,19 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private Long createdAt;
+    private Long createTime;
 
     @Column(nullable = false)
-    private Long updatedAt;
+    private Long updateTime;
 
-    private Long deletedAt;
+    private Long deleteTime;
 
     public static User of(String username, String password, Long currentTime) {
         return User.builder()
             .username(username)
             .password(password)
-            .createdAt(currentTime)
-            .updatedAt(currentTime)
+            .createTime(currentTime)
+            .updateTime(currentTime)
             .build();
     }
 

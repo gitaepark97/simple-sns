@@ -1,6 +1,6 @@
-package hugo.simplesns.controller;
+package hugo.simplesns.web;
 
-import hugo.simplesns.domain.User;
+import hugo.simplesns.core.domain.User;
 
 public record UserResponse(
     String username
