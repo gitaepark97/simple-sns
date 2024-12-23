@@ -27,6 +27,10 @@ public class UserService {
         return userRepository.findByUsername(username).orElseThrow(ErrorCode.NOT_FOUND_USER::toException);
     }
 
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId).orElseThrow(ErrorCode.NOT_FOUND_USER::toException);
+    }
+
     private void checkUniqueUsername(String username) {
         if (userRepository.existsByUsername(username)) {
             throw ErrorCode.DUPLICATED_USERNAME.toException();

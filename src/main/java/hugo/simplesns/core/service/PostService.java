@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class PostService {
@@ -21,7 +23,11 @@ public class PostService {
     }
 
     public Page<Post> getUserPosts(Long userId, Pageable pageable) {
-        return postRepository.findByWriterId(userId, pageable);
+        return postRepository.findAllByWriterId(userId, pageable);
+    }
+
+    public Page<Post> getUsersPosts(List<Long> userIds, Pageable pageable) {
+        return postRepository.findAllByWriterIdIn(userIds, pageable);
     }
 
 }

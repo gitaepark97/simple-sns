@@ -11,10 +11,10 @@ record PostResponse(
     Long createTime
 ) {
 
-    static PostResponse from(Post post, User user) {
+    static PostResponse from(Post post, User writer) {
         return new PostResponse(
             post.getId(),
-            UserResponse.from(user),
+            UserResponse.from(writer),
             post.getTitle(),
             post.getContent(),
             post.getCreateTime()
