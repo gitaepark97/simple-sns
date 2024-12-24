@@ -19,6 +19,7 @@ public class FollowService {
     private final ClockProvider clockProvider;
     private final FollowRepository followRepository;
 
+    @Transactional
     public void follow(Long followerId, Long followingId) {
         checkAlreadyFollowed(followerId, followingId);
         Follow follow = Follow.of(followerId, followingId, clockProvider.millis());

@@ -8,16 +8,18 @@ record PostResponse(
     UserResponse writer,
     String title,
     String content,
-    Long createTime
+    Long createTime,
+    int likeCount
 ) {
 
-    static PostResponse from(Post post, User writer) {
+    static PostResponse from(Post post, User writer, int likeCount) {
         return new PostResponse(
             post.getId(),
             UserResponse.from(writer),
             post.getTitle(),
             post.getContent(),
-            post.getCreateTime()
+            post.getCreateTime(),
+            likeCount
         );
     }
 

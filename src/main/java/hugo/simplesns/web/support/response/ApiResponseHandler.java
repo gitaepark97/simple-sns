@@ -39,12 +39,12 @@ class ApiResponseHandler implements ResponseBodyAdvice<Object> {
             return ApiResponse.of(status, entity.getBody());
         }
 
-        HttpStatus status = obtainsResponseStatus(returnType);
+        HttpStatus status = extractResponseStatus(returnType);
         response.setStatusCode(status);
         return ApiResponse.of(status, body);
     }
 
-    private HttpStatus obtainsResponseStatus(MethodParameter returnType) {
+    private HttpStatus extractResponseStatus(MethodParameter returnType) {
         ResponseStatus responseStatus = returnType.getMethodAnnotation(ResponseStatus.class);
         return responseStatus == null ? HttpStatus.OK : responseStatus.value();
     }
